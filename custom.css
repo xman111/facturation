@@ -1,0 +1,153 @@
+/*
+#entete, #contenu, #footer {
+padding:1px 0;
+}
+*/
+#entete {
+  background-color:#ecdabf;
+  text-align:center;
+}
+#main {
+  max-with:1200px;
+  margin:auto;
+}
+
+#footer {
+  text-align:center;
+  clear:both;
+}
+body{
+  margin      : 0;
+  padding     : 1.5em;
+  font-family : Georgia,Utopia,Charter,serif;
+}
+label.choixlabeltitre {
+  width: 170px;
+}
+label.choixlabel {
+	width: 130px;
+  text-decoration: none;
+  font-weight: normal;
+}
+label{
+  width: auto;
+}
+
+.fHTLabel{
+  width: 250px;
+}
+.ButtonRadioBox{
+ width: 130px;
+}
+
+label.resultslabel, li.list-group-item{
+  width: 250px;
+}
+li.resultslabel2{
+  width: 210px;
+  margin:20px;
+
+}
+div.answer{
+  width: 140px;
+}
+li.list-group-item{
+  text-decoration: none;
+  font-weight: normal;
+  font-size:  small;
+  padding:1px;
+}
+
+.panel-collapse{
+  margin:20px;
+}
+
+p.answer, div.answer, label.answer, div.results, label.resultslabel, div.answer, li.resultslabel2, div.results,li.list-group-item{
+  display: inline-block;
+  position: relative;
+  margin: auto;
+}
+
+
+.parametreschoix{
+  margin: auto;
+  position: relative;
+  width : 470px;
+  padding: 1em;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #999;
+  border: inset 1px solid #333;
+  background: -webkit-linear-gradient(bottom, #9e6df9, #79a5fb 175px);
+  background: -moz-linear-gradient(bottom, #9e6df9, #79a5fb 175px);
+  background: linear-gradient(bottom, #9e6df9, #79a5fb 175px);
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+
+}
+
+.resultchoix, .resultcalculs, .dispbenef{
+  margin: auto;
+  position: relative;
+  width : 470px;
+  padding: 1em;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #999;
+  border: inset 1px solid #333;
+
+}
+.dispHT, .dispResults{
+  margin: auto;
+  position: relative;
+  width : 470px;
+  padding: 1em;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #999;
+  border: inset 1px solid #333;
+  background: -webkit-linear-gradient(bottom, #b3b3b3, #f0f0f1 175px);
+
+}
+/*
+background: -webkit-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+background: linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+*/
+
+
+input {
+  display      : inline-block;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+input[type=checkbox]:not(old),
+input[type=radio   ]:not(old){
+  width   : 28px;
+  margin  : 0;
+  padding : 0;
+  opacity : 0;
+}
+
+input[type=checkbox]:not(old) + label,
+input[type=radio   ]:not(old) + label{
+  display      : inline-block;
+  margin-left  : -28px;
+  padding-left : 28px;
+  background   : url('checks.png') no-repeat 0 0;
+  line-height  : 24px;
+}
+
+input[type=checkbox]:not(old):checked + label{
+  background-position : 0 -24px;
+}
+
+input[type=radio]:not(old):checked + label{
+  background-position : 0 -48px;
+}

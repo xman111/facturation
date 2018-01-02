@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <LINK rel="stylesheet" type="text/css" href="custom.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <script src="jquery.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <title>Simulateur Facturation Auteur</title>
+</head>
+
+<body>
+
+  <div id="entete">
+  </div>
+
+  <div id="main">
+
+     <div class="parametreschoix">
+       <div class="choice">
+         <label for="StatutAffiliation" class="choixlabeltitre">Type AGESSA :</label>
+         <input id="Affilie" type="radio" name="StatutAffiliation" value="Affilie" class="ButtonRadioBox" onchange="UtilisateurChoiceChange()"/>
+         <label for="Affilie" class="choixlabel" >Affilie</label>
+         <input id="Assujeti" type="radio" name="StatutAffiliation" value="Assujeti" class="ButtonRadioBox" checked onchange="UtilisateurChoiceChange()"/>
+         <label for="Assujeti" class="choixlabel" >Assujeti</label>
+       </div>
+
+       <div class="choice">
+         <label for="StatutVO" class="choixlabeltitre">Type FACTURE :</label>
+         <input id="VO" type="radio" name="StatutVO" value="VO"  class="ButtonRadioBox" checked onchange="UtilisateurChoiceChange()" />
+         <label for="VO" class="choixlabel">Vente Oeuvre</label>
+         <input id="NA" type="radio" name="StatutVO" value="NA" class="ButtonRadioBox" onchange="UtilisateurChoiceChange()"/>
+         <label for="NA" class="choixlabel">Note Auteur</label>
+       </div>
+
+       <div class="choice">
+         <label for="Diffuseur" class="choixlabeltitre">Inclure la cotisation Diffuseur ? :</label>
+         <input id="DiffuseurOui" type="radio" name="Diffuseur" value=DiffuseurOui class="ButtonRadioBox" onchange="UtilisateurChoiceChange()" />
+         <label for="DiffuseurOui" class="choixlabel">Oui</label>
+         <input id="DiffuseurNon" type="radio" name="Diffuseur" value="DiffuseurNon" class="ButtonRadioBox" checked onchange="UtilisateurChoiceChange()" />
+         <label for="DiffuseurNon" class="choixlabel">Non</label>
+       </div>
+
+     </div>
+
+    <div class="dispHT">
+      <label for="fHT" class="fHTLabel">HT (Remuneration Artistique) :</label>
+      <input id="fHT" type="number" value="0" onchange="Calcul_AllFromHT()" class="ButtonRadioBox"/> €
+    </div>
+
+
+    <div class="dispResults">
+      <p class="answer">
+       <label for="fComputedAVerserAgessa" class="resultslabel">Client paye aux AGESSA _ _ _ _ _ _ </label>
+       <div id="fComputedAVerserAgessa" class="results"></div> €
+      </p>
+      <p class="answer">
+       <label for="fComputedAVerserAuteur" class="resultslabel">Client paye a l'auteur _ _ _ _ _ _ _ _</label>
+       <div id="fComputedAVerserAuteur" class="results"></div> €
+      </p>
+      <label for="fTotalAVerser" class="fHTLabel">Total paye par Client : </label>
+      <input id="fTotalAVerser" type="number" value="0" onchange="Calcul_TotalAVerser_2_HT()" class="ButtonRadioBox"/> €
+
+    </div>
+
+    <div id="DispResults" class="resultcalculs">
+      <ul>
+        <li class="resultslabel2"> Taux TVA applique : </li><div id="fSelectedTxTVA" class="results"></div> %
+        <li class="resultslabel2"> Total TVA : </li><div id="fComputedTVA" class="results"></div> €
+        <li class="resultslabel2"> Total TTC : </li><div id="fComputedTTC" class="results"></div> €
+        <li class="resultslabel2"> Precompte AGESSA : </li><div id="fComputedPrecompte" class="results"></div> €
+        <li class="resultslabel2"> Diffuseur AGESSA : </li><div id="fComputedDiffuseur" class="results"></div> €
+      </ul>
+
+      <div class="AgessaData">
+       <div class="panel-group">
+         <div class="panel panel-default">
+           <div class="panel-heading">
+             <h1 class="panel-title">
+               <a data-toggle="collapse" href="#collapse1">Details AGESSA</a>
+             </h1>
+           </div>
+           <div id="collapse1" class="panel-collapse collapse">
+             <ul class="list-group">
+               <li class="list-group-item">Precompte - Cotisation Maladie : </li><div id="fComputedPrecMaladie" class="answer"></div> €
+               <li class="list-group-item">Precompte - CSG : </li><div id="fComputedPrecCSG" class="answer"></div> €
+               <li class="list-group-item">Precompte - CRDS : </li><div id="fComputedPrecCRDS" class="answer"></div> €
+               <li class="list-group-item">Precompte - Formation : </li><div id="fComputedPrecFormation" class="answer"></div> €
+             </ul>
+             <ul class="list-group">
+               <li class="list-group-item">Diffuseur - Cotisation : </li><div id="fComputedDiffCotisation" class="answer"></div> €
+               <li class="list-group-item">Diffuseur - Formation : </li><div id="fComputedDiffFormation" class="answer"></div> €
+             </ul>
+           </div>
+         </div>
+       </div>
+      </div>
+    </div>
+
+    <div class="dispbenef">
+      <p class="answer">
+        <label for="fComputedBenefNet" class="fHTLabel">Total dans ta poche :</label>
+         <div id="fComputedBenefNet" class="answer"></div> €
+      </p>
+     </div>
+  </div>
+
+  <div id="footer">
+  </div>
+
+
+
+  <script src="javascript.js" type="text/javascript"></script>
+
+</body>
+</html>
